@@ -1,0 +1,41 @@
+[![MIT licensed](https://img.shields.io/github/license/aliyevH/dac_autoreg)](https://raw.githubusercontent.com/OnePoint-Team/DAC-autoreg/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/network)
+[![GitHub issues](https://img.shields.io/github/issues-raw/OnePoint-Team/DAC-autoreg)](https://github.com/OnePoint-Team/DAC-autoreg/issues)
+[![Downloads](https://pepy.tech/badge/elasticfeed)](https://pepy.tech/project/dac_autoreg)
+
+### About ###
+
+This module is used to register `endpoints` and `service names` to out `DAC` [Dyncamic Access Control] service.
+
+`DAC` [Dyncamic Access Control] service is used to control accesses between `microservices` and `users`
+
+Visit https://github.com/OnePoint-Team/DAC for more information
+
+###  🔨  Installation ###
+```sh
+ $ sudo pip3 install dac_autoreg
+```
+
+### 🕹 Python Module
+```python
+from fastapi import FastAPI
+from core.factories import settings
+from core.extensions import log
+
+from dac_autoreg.modules import Autoreg
+
+app = FastAPI()
+
+@app.on_event("startup")
+async def startup():
+    Autoreg(app=app, log=log, settings=settings)
+```
+
+## Supported OS
+Linux, MacOS
+
+## 🌱 Contributing
+Feel free to open issue and send pull request.
+
+### Python >= 3.6
