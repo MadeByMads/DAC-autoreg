@@ -6,11 +6,12 @@
 
 ### About ###
 
-This module is used to register `endpoints` and `service names` to out `DAC` [Dyncamic Access Control] service.
+This module is used to register `endpoints` and `service names` to `DAC` [Dyncamic Access Control] service.
 
 `DAC` [Dyncamic Access Control] service is used to control accesses between `microservices` and `users`
 
-Visit https://github.com/OnePoint-Team/DAC for more information
+Visit https://github.com/OnePoint-Team/DAC for more information about `DAC` service
+
 
 ###  🔨  Installation ###
 ```sh
