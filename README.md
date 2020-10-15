@@ -1,4 +1,4 @@
-[![MIT licensed](https://img.shields.io/github/license/aliyevH/dac_autoreg)](https://raw.githubusercontent.com/OnePoint-Team/DAC-autoreg/master/LICENSE)
+[![MIT licensed](https://img.shields.io/github/license/aliyevH/dac_autoreg)](https://github.com/OnePoint-Team/DAC-autoreg/blob/master/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/network)
 [![GitHub issues](https://img.shields.io/github/issues-raw/OnePoint-Team/DAC-autoreg)](https://github.com/OnePoint-Team/DAC-autoreg/issues)
