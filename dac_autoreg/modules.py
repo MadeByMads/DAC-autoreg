@@ -43,7 +43,6 @@ class Autoreg:
 
     async def create_endpoints(service_id: str):
         """[summary]
-
         Args:
             service_id (str): [service_id of created service]
         [Creating endpoints pointing to service_id]
