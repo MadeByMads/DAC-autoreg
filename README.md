@@ -2,7 +2,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/OnePoint-Team/DAC-autoreg.svg)](https://github.com/OnePoint-Team/DAC-autoreg/network)
 [![GitHub issues](https://img.shields.io/github/issues-raw/OnePoint-Team/DAC-autoreg)](https://github.com/OnePoint-Team/DAC-autoreg/issues)
-[![Downloads](https://pepy.tech/badge/elasticfeed)](https://pepy.tech/project/dac_autoreg)
+<!-- [![Downloads](https://pepy.tech/badge/dac-autoreg)](https://pepy.tech/project/dac_autoreg) -->
 
 ### About ###
 
