@@ -5,10 +5,9 @@ this_directory = path.abspath(path.dirname(__file__))
 with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
-
 setup(
     name="dac-autoreg",
-    version="0.2.2",
+    version="0.2.4",
     include_package_data=True,
     packages=find_packages(),
     author="Hasan Aliyev", 
