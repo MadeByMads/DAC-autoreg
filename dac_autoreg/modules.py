@@ -5,7 +5,7 @@ import httpx
 import logging
 
 class Autoreg:
-    def __init__(self, app, settings: dict, log: object= None,exclude_list: Union[Set[str],List[str]] = None):
+    def __init__(self, app, settings: object, log: object= None,exclude_list: Union[Set[str],List[str]] = None):
         """[Auto registration endpoints in DAC]
         Args:
             app: [Instance of Fastapi app]
@@ -16,8 +16,8 @@ class Autoreg:
         self.log = log or logging.getLogger(__name__)
         # endpoints in exclude_list is not registered in DAC
         self.exclude_list = {"/openapi.json", "/docs", "/docs/oauth2-redirect", "/redoc", "/metrics/"}
-        self.dac_url = settings.get("DAC_URL")
-        self.service_name = settings.get("service_name")
+        self.dac_url = settings.DAC_URL
+        self.service_name = settings.SERIVCE_NAME
         self.prefixes = set()
         if exclude_list:
             self.exclude_list = self.exclude_list | exclude_list if isinstance(exclude_list,set) else set(exclude_list)
