@@ -17,7 +17,7 @@ class Autoreg:
         # endpoints in exclude_list is not registered in DAC
         self.exclude_list = {"/openapi.json", "/docs", "/docs/oauth2-redirect", "/redoc", "/metrics/"}
         self.dac_url = settings.DAC_URL
-        self.service_name = settings.SERIVCE_NAME
+        self.service_name = settings.SERVICE_NAME
         self.prefixes = set()
         if exclude_list:
             self.exclude_list = self.exclude_list | exclude_list if isinstance(exclude_list,set) else set(exclude_list)
