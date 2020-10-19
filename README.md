@@ -30,7 +30,7 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
-    Autoreg(app=app, log=log, settings=settings)
+    await Autoreg(app=app, log=log, settings=settings).autoreg()
 ```
 
 ## Supported OS
