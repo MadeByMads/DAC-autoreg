@@ -48,18 +48,24 @@ class Autoreg:
         """[summary]
         Args:
             service_id (str): [service_id of created service]
-        [Creating endpoints pointing to service_id]
+            [Creating endpoints pointing to service_id]
         """
-        for prefix in self.prefixes:
-            async with httpx.AsyncClient() as client:
-                await client.post(
-                    f"{self.dac_url}/endpoints", 
-                    json={"service_id": service_id, "prefix": prefix}
-                    )
-                
-                self.log.info(f"{prefix} created")
-              
 
+        # Getting registered prefixes from database
+        # We will use this prefixes list to check if endpoint is registered or not
+        registered_prefixes = await self.registered_endpoints()
+
+        for prefix in registered_prefixes:
+            if prefix not in registered_prefixes:
+                async with httpx.AsyncClient() as client:
+                    await client.post(
+                        f"{self.dac_url}/endpoints", 
+                        json={"service_id": service_id, "prefix": prefix}
+                        )
+                    
+                    self.log.info(f"{prefix} registered")
+            else:
+                log.warning(f"{prefix} is already registered")
 
     async def create_service(self):
         """[summary]
@@ -89,3 +95,16 @@ class Autoreg:
                     return response.json().get("id")
         except Exception as err:
             self.log.error(err,exc_info=True)
+
+
+    async def registered_endpoints(self):
+        """Get registered endpoints from database
+
+        Returns:
+            [list]: [Getting prefixes from endpoints registered in database]
+        """
+        async with httpx.AsyncClient() as client:
+                    endpoints = await client.get(
+                        f"{self.dac_url}/endpoints"
+                    )
+        return [content.get("prefix") for content in endpoints.json()]
