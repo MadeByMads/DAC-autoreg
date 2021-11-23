@@ -53,7 +53,7 @@ class Autoreg:
 
         # Getting registered prefixes from database
         # We will use this prefixes list to check if endpoint is registered or not
-        registered_prefixes = await self.registered_endpoints()
+        registered_prefixes = await self.registered_endpoints(service_id)
 
         for prefix in self.prefixes:
             if prefix not in registered_prefixes:
@@ -96,7 +96,7 @@ class Autoreg:
         except Exception as err:
             self.log.error(err, exc_info=True)
 
-    async def registered_endpoints(self):
+    async def registered_endpoints(self, servicd_id):
         """Get registered endpoints from database
 
         Returns:
@@ -104,7 +104,7 @@ class Autoreg:
         """
         async with httpx.AsyncClient() as client:
             endpoints = await client.get(
-                f"{self.dac_url}/endpoints"
+                f"{self.dac_url}/services/{servicd_id}/endpoints"
             )
             if endpoints.status_code == 200:
                 return [content.get("prefix") for content in endpoints.json()]

@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="dac-autoreg",
-    version="0.2.9",
+    version="0.3.0",
     include_package_data=True,
     packages=find_packages(),
     author="Hasan Aliyev", 
