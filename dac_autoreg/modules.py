@@ -59,8 +59,8 @@ class Autoreg:
             if prefix not in registered_prefixes:
                 async with httpx.AsyncClient() as client:
                     await client.post(
-                        f"{self.dac_url}/endpoints",
-                        json={"service_id": service_id, "prefix": prefix}
+                        f"{self.dac_url}/services/{service_id}/endpoints",
+                        json={"prefix": prefix}
                     )
 
                     self.log.info(f"{prefix} registered")
